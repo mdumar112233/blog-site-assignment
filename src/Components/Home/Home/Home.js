@@ -1,4 +1,5 @@
 import React from 'react';
+import BlogContent from '../BlogContent/BlogContent';
 import Navbar from '../Navbar/Navbar';
 import TopBanner from '../TopBanner/TopBanner';
 
@@ -7,6 +8,7 @@ const Home = () => {
         <div>
             <Navbar></Navbar>
             <TopBanner></TopBanner>
+            <BlogContent></BlogContent>
         </div>
     );
 };

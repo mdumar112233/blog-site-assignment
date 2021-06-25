@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import menuIcon from '../../../Images/menu.png';
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
@@ -11,7 +12,7 @@ const Navbar = () => {
                     <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
                       <a
                         className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
-                        href="#pablo" style={{fontSize: '20px'}}
+                        to="/home" style={{fontSize: '20px'}}
                       >
                         <span>a</span>sentus
                       </a>
@@ -33,44 +34,44 @@ const Navbar = () => {
                     >
                       <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
                         <li className="nav-item">
-                          <a
+                          <Link
                             className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                            href="#pablo"
+                            to="/home"
                           >
                             <i className="fab fa-facebook-square text-lg leading-lg text-black opacity-75"></i><span className="ml-2">Home</span>
-                          </a>
+                          </Link>
                         </li>
                         <li className="nav-item">
-                          <a
+                          <Link
                             className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                            href="#pablo"
+                            to="/addBlog"
                           >
                             <i className="fab fa-twitter text-lg leading-lg text-white opacity-75"></i><span className="ml-2">Admin</span>
-                          </a>
+                          </Link>
                         </li>
                         <li className="nav-item">
-                          <a
+                          <Link
                             className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                            href="#pablo"
+                            to=""
                           >
                             <i className="fab fa-pinterest text-lg leading-lg text-white opacity-75"></i><span className="ml-2">Contact</span>
-                          </a>
+                          </Link>
                         </li>
                         <li className="nav-item">
-                          <a
+                          <Link
                             className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                            href="#pablo"
+                            to="/login"
                           >
                             <i className="fab fa-pinterest text-lg leading-lg text-white opacity-75"></i><span className="ml-2">Login</span>
-                          </a>
+                          </Link>
                         </li>
                         <li className="nav-item">
-                          <a
+                          <Link
                             className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                            href="#pablo"
+                            to="/signUp"
                           >
                             <i className="fab fa-pinterest text-lg leading-lg text-white opacity-75"></i><span className="ml-2">Sign Up</span>
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                     </div>

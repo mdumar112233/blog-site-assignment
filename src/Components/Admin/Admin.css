@@ -1,0 +1,11 @@
+.sidebar{
+    width: 200px;
+}
+.add-blog{
+    width: 1000px;
+}
+.image-upload{
+    background-color: #D7AF8B;
+    padding: 10px;
+    border-radius: 3px;
+}

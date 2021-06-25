@@ -7,7 +7,7 @@
     height: 615px;
     position: absolute;
     top: 0;
-    z-index: -2;
+    /* z-index: -2; */
 }
 .content{
     margin-top: 11rem;
@@ -23,6 +23,7 @@
     border: 1px solid #FFFFFF;
     padding: 8px 12px;
     font-weight: bold;
+    z-index: -2;
 }
 .content button:hover{
     background: #A6A7AA;
@@ -30,4 +31,5 @@
     font-weight: 200;
     color: #000;
     transition:.2s;
+    z-index: -2;
 }

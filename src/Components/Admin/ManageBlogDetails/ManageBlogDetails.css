@@ -1,0 +1,8 @@
+.delete-btn{
+    background-color: tomato;
+    padding: 5px 8px;
+    border-radius: 4px;
+}
+.manage-btn-line{
+    margin-top: 16px;
+}

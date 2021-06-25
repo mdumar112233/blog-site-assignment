@@ -5,7 +5,8 @@ import {
   Route
 } from "react-router-dom";
 import Home from './Components/Home/Home/Home';
-import Admin from './Components/Admin/Admin';
+import AddBlog from './Components/Admin/AddBlog';
+import ManageBlog from './Components/Admin/ManageBlog/ManageBlog';
 
 function App() {
   return (
@@ -18,7 +19,10 @@ function App() {
             <Home/>
         </Route>
         <Route path='/addBlog'>
-            <Admin/>
+            <AddBlog/>
+        </Route>
+        <Route path='/manageBlog'>
+            <ManageBlog/>
         </Route>
       </Switch>
     </Router>

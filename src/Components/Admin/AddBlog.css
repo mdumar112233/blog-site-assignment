@@ -1,0 +1,26 @@
+.sidebar{
+    width: 200px;
+}
+.add-blog{
+    width: 1000px;
+}
+.image-upload{
+    background-color: #D7AF8B;
+    padding: 10px;
+    border-radius: 3px;
+    width: 150px;
+    cursor: pointer;
+}
+.cover-img{
+    position: absolute;
+    margin-bottom: 40px;
+}
+.submit-area{
+    background-color: #FAFAFA;
+    width: 116.3%;
+}
+.submit-container h3{
+    font-size: 30px;
+    margin-top:14px;
+    margin-left: 30px;
+}

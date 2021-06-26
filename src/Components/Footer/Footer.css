@@ -1,0 +1,22 @@
+.footer-container{
+    background-image: url('../../Images/Rectangle2.png');
+    height: 400px;
+    margin-top: 50px;
+}
+.footer-title{
+    color: #FFFFFF;
+    font-size: 20px;
+}
+.about-us p{
+    color: #CBD3E1;
+}
+nav{
+    border-bottom: unset !important;
+}
+.nav-link{
+    color: #CBD3E1;
+}
+.copy-right{
+    color: #FFFFFF;
+    text-align: center;
+}

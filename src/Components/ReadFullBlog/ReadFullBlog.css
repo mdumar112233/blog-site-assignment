@@ -1,0 +1,14 @@
+.navbar-area{
+    background-color: rgba(5, 5, 5, 0.404);
+}
+.full-blog{
+    width: 60%;
+    margin: 0 auto;
+}
+.full-blog h3{
+    font-size: 60px;
+}
+.full-blog img{
+    margin: 0 auto;
+    width: 100%;
+}

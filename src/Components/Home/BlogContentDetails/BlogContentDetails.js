@@ -1,8 +1,16 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import './BlogContentDetails.css';
 
 const BlogContentDetails = (props) => {
     const {image, title, description} = props.content;
+
+    const history = useHistory();
+    const handleBlog = () => {
+       const url = `/readMore`;
+        history.push(url);
+    }
+
     return (
         <div>
             <section class="text-gray-600 body-font">
@@ -21,7 +29,7 @@ const BlogContentDetails = (props) => {
                     <h2 class="text-lg text-gray-900 font-medium title-font mb-4">{title}</h2>
                     <p class="leading-relaxed text-base"  style={{color: '#A6A7AA'}}>{description}</p>
                     <div className='mt-2 flex flex-row'>
-                        <button>Read more</button> <div className='button-line'></div>
+                        <button onClick={handleBlog}>Read more</button> <div className='button-line'></div>
                     </div>
                     </div>
                 </div>

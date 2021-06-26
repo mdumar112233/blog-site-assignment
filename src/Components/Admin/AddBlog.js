@@ -1,11 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './AddBlog.css';
 import Sidebar from '../Share/Sidebar/Sidebar';
 import upload from '../../Images/cloud-computing.png';
+import axios from 'axios';
 
 const AddBlog = () => {
-    const handleImage = () => {
+    const [serviceData, setServiceData] = useState({});
+    const [imageUrl, setImageUrl] = useState(null);
 
+
+    const handleChange= (e) => {
+        const newData = {...serviceData};
+        newData[e.target.name] = e.target.value;
+        setServiceData(newData);
+    }
+
+    const handleImage = e => {
+        console.log(e.target.files);
+        const imageData = new FormData();
+        imageData.set('key', '0bbd94d120064c98ef673307396657da');
+        imageData.append('image', e.target.files[0]);
+
+        axios.post('https://api.imgbb.com/1/upload', imageData)
+        .then(res => {
+            setImageUrl(res.data.data.display_url);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
+
+    const handleSubmit = () => {
+        const submitData = {...serviceData, image: imageUrl}
+        console.log(submitData);
+
+        if(imageUrl){
+            fetch('http://localhost:5000/blogInfo', {
+                method: 'POST',
+                headers: {'content-type': 'application/json'},
+                body: JSON.stringify(submitData)
+            })
+            .then(res => {
+                console.log('service data uploaded');
+            })
+        }
     }
     return (
         <main className='flex flex-row'>
@@ -32,13 +70,13 @@ const AddBlog = () => {
                     </div>
                     <div class="relative mb-4 mt-14">
                         <label for="email" class="leading-7 text-sm text-gray-600">Title</label>
-                        <input type="email" id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                        <input onBlur={handleChange} type="text" id="email" name="text" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                     </div>
                     <div class="relative mb-4">
                         <label for="message" class="leading-7 text-sm text-gray-600">Description</label>
-                        <textarea id="message" name="message" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                        <textarea onBlur={handleChange} id="message" name="message" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
                     </div>
-                    <button class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Submit</button>
+                    <button onClick={handleSubmit} class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Submit</button>
                     </div>
                 </div>
              </div>

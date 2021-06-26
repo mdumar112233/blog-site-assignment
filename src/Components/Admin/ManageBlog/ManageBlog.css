@@ -3,6 +3,11 @@
     margin-top: 15px;
     margin-left: 15px;
 }
+.manage-blog {
+    width: 100%;
+    height: auto;
+}
 .blog-area{
     background-color: #FAFAFA;
+    height: auto;
 }

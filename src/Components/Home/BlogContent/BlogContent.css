@@ -1,4 +1,8 @@
 .blog-content{
     height: auto;
-    margin-top: 34rem;
+    margin-top: 37rem;
+}
+.blog-title h1{
+    font-size: 26px;
+    margin-top: 50px;
 }

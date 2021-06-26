@@ -8,7 +8,7 @@ const ManageBlog = () => {
     console.log(manageBlog);
 
     useEffect(() => {
-        fetch('http://localhost:5000/blogData')
+        fetch('https://glacial-thicket-40955.herokuapp.com/blogData')
         .then(res => res.json())
         .then(data => setManageBlog(data))
     },[])

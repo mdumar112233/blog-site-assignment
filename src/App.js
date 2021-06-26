@@ -5,11 +5,12 @@ import {
   Route
 } from "react-router-dom";
 import Home from './Components/Home/Home/Home';
-import AddBlog from './Components/Admin/AddBlog';
 import ManageBlog from './Components/Admin/ManageBlog/ManageBlog';
 import ReadFullBlog from './Components/ReadFullBlog/ReadFullBlog';
 import CreateAccount from './Components/SignUpSignIn/LoginUser/CreateAccount';
 import Login from './Components/SignUpSignIn/LoginUser/Login';
+import Admin from './Components/Admin/Admin/Admin';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import { createContext, useState } from 'react';
 
 export const UserContext = createContext();
@@ -26,15 +27,15 @@ function App() {
           <Route path='/home'>
               <Home/>
           </Route>
-          <Route path='/addBlog'>
-              <AddBlog/>
-          </Route>
+          <PrivateRoute path='/admin'>
+              <Admin/>
+          </PrivateRoute>
           <Route path='/manageBlog'>
               <ManageBlog/>
           </Route>
-          <Route path='/readMore'>
+          <PrivateRoute path='/readMore/:_id'>
               <ReadFullBlog/>
-          </Route>
+          </PrivateRoute>
           <Route path='/login'>
               <Login/>
           </Route>

@@ -35,7 +35,7 @@ const AddBlog = () => {
         console.log(submitData);
 
         if(imageUrl){
-            fetch('http://localhost:5000/blogInfo', {
+            fetch('https://glacial-thicket-40955.herokuapp.com/blogInfo', {
                 method: 'POST',
                 headers: {'content-type': 'application/json'},
                 body: JSON.stringify(submitData)
